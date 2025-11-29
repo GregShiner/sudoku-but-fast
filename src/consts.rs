@@ -1,7 +1,10 @@
 use crate::game::CellIndex;
-pub const SIZE: usize = 81;
+pub const SIZE: CellIndex = 81;
 
 #[rustfmt::skip]
+/// Precomputed intersecting cells.
+/// Index by cell index and this will give the list of conflicting cells (all cells that share a
+/// 3x3, column, or row)
 pub const CHECKS: [[CellIndex; 20]; SIZE] = [
    [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 18, 19, 20, 27, 36, 45, 54, 63, 72],
    [0, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 18, 19, 20, 28, 37, 46, 55, 64, 73],
